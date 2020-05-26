@@ -31,8 +31,7 @@ def functest():
     info = []
     volunteer_dict, request_dict = geomatching.main()
     for elem in ids:
-        info.append(elem)
-        info.append(eightclosestinfo(elem, volunteer_dict, request_dict))
+        info.append((elem, eightclosestinfo(elem, volunteer_dict, request_dict)))
     return render_template('afterchoosing.html', ids1=info)
 
 def eightclosestinfo(name, volunteer_dict, request_dict):
