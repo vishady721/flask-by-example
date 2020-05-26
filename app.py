@@ -25,9 +25,9 @@ def getRequestersAfterDate(date):
     newDict = {key: value for key, value in request_dict.items() if key > date}
     return newDict
 
-@app.route('/', methods=["POST"])
+@app.route('/1', methods=["GET"])
 def functest():
-    ids = request.form["ids"]
+    ids = request.args.get("ids")
     return render_template('afterchoosing.html', ids1=ids)
 
 if __name__ == '__main__':
