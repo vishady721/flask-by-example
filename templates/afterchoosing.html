@@ -1,0 +1,16 @@
+<DOCTYPE html>
+	<html lang='en'>
+        <div class="container">
+            <div class="content-section">
+                        <legend class="border-bottom mb-4">IDs to select</legend>
+                        {%for i in ids1%}
+                        <li>
+                                <input type = "checkbox" id = "id_{{i}}" name = "ids" value = "1">
+                                <label for="id1">{{i}}</label>
+                         </li>
+                        {% endfor %}
+
+            </div>
+        </div>
+
+    </html>
