@@ -1,18 +1,27 @@
-from flask import Flask
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 
-app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
+class Config(object):
+    DEBUG = False
+    TESTING = False
+    CSRF_ENABLED = True
+    SECRET_KEY = 'this-really-needs-to-be-changed'
 
 
-@app.route('/')
-def hello():
-    return "Hello World!"
+class ProductionConfig(Config):
+    DEBUG = False
 
 
-@app.route('/<name>')
-def hello_name(name):
-    return "Hello {}!".format(name)
+class StagingConfig(Config):
+    DEVELOPMENT = True
+    DEBUG = True
 
-if __name__ == '__main__':
-    app.run()
+
+class DevelopmentConfig(Config):
+    DEVELOPMENT = True
+    DEBUG = True
+
+
+class TestingConfig(Config):
+    TESTING = True
