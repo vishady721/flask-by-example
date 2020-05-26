@@ -1,0 +1,20 @@
+<DOCTYPE html>
+	<html lang='en'>
+<div class="container">
+    <div class="content-section">
+        <form method="POST" action="">
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">IDs to select</legend>
+                {%for i in ids%}
+                <li>
+                        <input type = "checkbox" id = "id_{{i}}" name = "ids" value = "1">
+                        <label for="id1">{{i}}</label>
+                 </li>
+                {% endfor %}
+
+            </fieldset>
+        <button type="submit" onclick="window.location.href = 'http://localhost:5000/1';">Submit</button>
+        </form>
+    </div>
+</div>
+    </html>
