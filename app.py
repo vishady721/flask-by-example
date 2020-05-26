@@ -22,7 +22,7 @@ def postMethod():
 
 def getRequestersAfterDate(date):
     volunteer_dict, request_dict = geomatching.main()
-    newDict = {key: value for key, value in request_dict.items() if key > date}
+    newDict = {key: value for key, value in volunteer_dict.items() if key > date}
     return newDict
 
 @app.route('/1', methods=["GET"])
