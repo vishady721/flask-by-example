@@ -95,4 +95,4 @@ def find_eight_closest(timestamp, volunteer_dict, request_dict, language = None)
     return request_info_dict, match_infos
 
 if __name__ == '__main__':
-    pprint(find_eight_closest(43973.59278, main()[0], main()[1]))
+    pass
