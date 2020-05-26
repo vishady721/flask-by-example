@@ -19,15 +19,16 @@ def postMethod():
     print(nameList)
     return render_template('requestersChecklist.html', ids= nameList)
 
-#@app.route('/1', methods=["GET"])
-#def postMethod():
- #   return
-
 
 def getRequestersAfterDate(date):
     volunteer_dict, request_dict = geomatching.main()
     newDict = {key: value for key, value in request_dict.items() if key > date}
     return newDict
+
+@app.route('/1', methods=["POST"])
+def functest():
+    ids = request.form["ids"]
+    return render_template('afterchoosing.html', ids1=ids)
 
 if __name__ == '__main__':
     app.run()
