@@ -3,7 +3,7 @@ import geomatching
 import date_to_string
 
 app = Flask(__name__)
-
+volunteer_dict, request_dict = geomatching.main()
 
 @app.route('/')
 def main():
@@ -21,14 +21,21 @@ def postMethod():
 
 
 def getRequestersAfterDate(date):
-    volunteer_dict, request_dict = geomatching.main()
     newDict = {key: value for key, value in volunteer_dict.items() if key > date}
     return newDict
 
 @app.route('/1', methods=["GET"])
 def functest():
     ids = request.args.getlist('ids')
-    return render_template('afterchoosing.html', ids1=ids)
+    info = []
+    for elem in ids:
+        info.append(eightclosestinfo(elem, volunteer_dict, request_dict))
+    return render_template('afterchoosing.html', ids1=info)
+
+def eightclosestinfo(name, volunteer_dict, request_dict):
+    for elem in request_dict:
+        if request_dict[elem]['NAME'] == name:
+            return geomatching.find_eight_closest(elem, volunteer_dict, request_dict)
 
 if __name__ == '__main__':
     app.run()
