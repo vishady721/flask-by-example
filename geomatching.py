@@ -1,7 +1,6 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from pprint import pprint
-import time
 from math import radians, cos, sin, asin, sqrt 
 
 def main():
