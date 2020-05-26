@@ -7,7 +7,7 @@
                 <legend class="border-bottom mb-4">IDs to select</legend>
                 {%for i in ids%}
                 <li>
-                        <input type = "checkbox" id = "id_{{i}}" name = "ids" value = {{i}}>
+                        <input type = "checkbox" id = "id_{{i}}" name = "ids[]" value = {{i}}>
                         <label for="id1">{{i}}</label>
                  </li>
                 {% endfor %}
