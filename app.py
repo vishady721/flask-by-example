@@ -37,7 +37,8 @@ def functest():
 def eightclosestinfo(name, volunteer_dict, request_dict):
     for elem in request_dict:
         if request_dict[elem]['NAME'] == name:
-            return geomatching.find_eight_closest(elem, volunteer_dict, request_dict)
+            console.log(elem)
+            return geomatching.find_eight_closest(elem, volunteer_dict, request_dict)[1]
 
 if __name__ == '__main__':
     app.run()
