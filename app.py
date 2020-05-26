@@ -15,7 +15,7 @@ def postMethod():
     relevantRequesters = getRequestersAfterDate(date_to_string.date_to_num(dateString))
     print("Date to Number {}".format(date_to_string.date_to_num(dateString)))
     print("Relevant Requesters" +str(relevantRequesters))
-    nameList = [dict["NAME"] for dict in relevantRequesters.values()]
+    nameList = [dict_["NAME"] for dict_ in relevantRequesters.values()]
     print(nameList)
     return render_template('requestersChecklist.html', ids= nameList)
 
