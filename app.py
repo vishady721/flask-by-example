@@ -27,7 +27,7 @@ def getRequestersAfterDate(date):
 
 @app.route('/1', methods=["GET"])
 def functest():
-    ids = [elem for elem in request.form.getlist("ids")]
+    ids = [u'ids']
     return render_template('afterchoosing.html', ids1=ids)
 
 if __name__ == '__main__':
