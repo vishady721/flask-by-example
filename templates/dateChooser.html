@@ -1,0 +1,22 @@
+<DOCTYPE html>
+	<html lang='en'>
+	<head>
+        <script type='text/javascript'>
+            function submit() {
+                var date = $('#input_ID').val()
+                console.log(date);
+                console.log("Pressed Submit")
+
+            }</script>
+    </head>
+
+<h2>Date Field</h2>
+<p>Input the starting date for which you'd like to see requester information.</p>
+
+<form method = "POST">
+    <label for="input_ID">Date:</label>
+    <input id="input_ID" name="date" type="date" />
+    <input type = "submit"/>
+</form>
+
+</html>
