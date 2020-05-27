@@ -84,7 +84,6 @@ def authenticateUser(credentials):
         user = User(usr, usr)  # creates a user
         login_user(user)  # Logs them in, flask makes a session
 
-        print("USER Logged in, redirecting to " +str(url_for('main')))
         response = jsonify({"authenticated": "true"})
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
@@ -94,7 +93,7 @@ def authenticateUser(credentials):
         response = jsonify({"authenticated": "false"})
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
-    return redirect(url_for('main'))
+    return redirect(https://oaklandatrisk-stage.herokuapp.com/)
 
 
 
