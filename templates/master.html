@@ -14,7 +14,7 @@
 					console.log("Getting response from " +url)
 
                     if(server_response["authenticated"] == "true"){
-			                    	var url = "https://oaklandatrisk-stage.herokuapp.com/";
+			                    	var url = "https://oaklandatrisk-stage.herokuapp.com/main";
 									$(location).attr('href',url);
                     }else{
                         window.alert("CANNOT AUTHENTICATE USER");
@@ -38,12 +38,6 @@
             <p><input type=password name=password id="password">
 	</form>
   <button onclick="loginUser()">Login</button>  
-
-  <body>
-      <div name = "chat_container" id='chat_container'></div>
-
-  </body>
-
 
 
 
