@@ -53,6 +53,18 @@ def eightclosestinfo(name, volunteer_dict, request_dict):
             return geomatching.find_eight_closest(elem, volunteer_dict, request_dict)[1]
 
 
+#  user model, inheriting from the defualt UserMixin class, which contains methods like is_active and is_authenticated
+class User(UserMixin):
+    def __init__(self, name, id, active=True):
+        self.name = str(name)
+        self.id = str(id)
+        self.active = active
+    #just returns their ID, name, and password
+    def __repr__(self):
+        return "%d/%s/%s" % (self.id, self.name, self.password)
+
+        
+
 @app.route("/authenticateUser/<credentials>", methods=["GET", "POST"])
 def authenticateUser(credentials):
     usr = credentials.split("   ")[0]
@@ -110,7 +122,7 @@ def page_not_found(e):
 def load_user(usr):
     return User(usr, usr)
 
-    
+
 if __name__ == '__main__':
     app.run()
 
