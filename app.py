@@ -15,12 +15,12 @@ app.config.update(
     SECRET_KEY = 'secret_xxx'
 )
 
-@app.route('/main')
+@app.route('/')
 @login_required
 def main():
     return render_template('dateChooser.html')
 
-@app.route('/main', methods=["POST"])
+@app.route('/', methods=["POST"])
 @login_required
 def postMethod():
     dateString = request.form["date"]
@@ -93,7 +93,7 @@ def authenticateUser(credentials):
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
-    return redirect(url_for('main'))
+    return redirect(url_for(''))
 
 
 
