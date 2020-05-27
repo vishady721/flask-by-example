@@ -15,12 +15,12 @@ app.config.update(
     SECRET_KEY = 'secret_xxx'
 )
 
-@app.route('/')
+@app.route('/main')
 @login_required
 def main():
     return render_template('dateChooser.html')
 
-@app.route('/', methods=["POST"])
+@app.route('/main', methods=["POST"])
 @login_required
 def postMethod():
     dateString = request.form["date"]
@@ -87,13 +87,13 @@ def authenticateUser(credentials):
         response = jsonify({"authenticated": "true"})
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
-
     else:
         print("Cannot log in")
         response = jsonify({"authenticated": "false"})
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
-    return redirect(https://oaklandatrisk-stage.herokuapp.com/)
+
+    return redirect(url_for('main'))
 
 
 
