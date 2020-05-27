@@ -52,6 +52,40 @@ def eightclosestinfo(name, volunteer_dict, request_dict):
         if name in request_dict[elem]['NAME']:
             return geomatching.find_eight_closest(elem, volunteer_dict, request_dict)[1]
 
+
+@app.route("/authenticateUser/<credentials>", methods=["GET", "POST"])
+def authenticateUser(credentials):
+    usr = credentials.split("   ")[0]
+    psw = credentials.split("   ")[1]
+
+    authenticatedUser = False
+    print("Authenticating user")
+
+    if usr == "Paige" and psw == "corona":
+        print("Authenticated correctly")
+        authenticatedUser = True
+    else:
+        print("{}".format(psw))
+
+    # AUTHENTICATE USR HERE
+    if (authenticatedUser):
+        user = User(usr, usr)  # creates a user
+        login_user(user)  # Logs them in, flask makes a session
+
+        print("USER Logged in, redirecting to " +str(url_for('main')))
+        response = jsonify({"authenticated": "true"})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
+
+    else:
+        print("Cannot log in")
+        response = jsonify({"authenticated": "false"})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
+    return redirect(url_for('main'))
+
+
+
 # somewhere to login
 @app.route("/login", methods=["GET", "POST"])
 def login():
