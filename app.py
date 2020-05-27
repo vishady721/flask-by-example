@@ -4,7 +4,10 @@ import geomatching
 import date_to_string
 
 app = Flask(__name__)
-
+app.config.update(
+    DEBUG = True,
+    SECRET_KEY = 'secret_xxx'
+)
 
 @app.route('/')
 def main():
