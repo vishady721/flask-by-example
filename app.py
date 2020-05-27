@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify, request
+from flask_login import LoginManager
 import geomatching
 import date_to_string
 
