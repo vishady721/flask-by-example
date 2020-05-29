@@ -1,5 +1,8 @@
 body {
     font-family: 'Raleway', sans-serif;
-    background-color: #992BC2FF;
+}
+
+div.content{
+    background-color: #9967B8FF;
     text-align: center;
 }
