@@ -11,7 +11,7 @@
                         <ul>
                         {%for i in ids1%}
                         <li>
-                                JSON.parse({{i}}[1][0]);
+                                {{i[0]}}, {{i[1][0]}};
                          </li>
                         {% endfor %}
                         </ul>
