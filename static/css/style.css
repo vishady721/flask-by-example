@@ -1,11 +1,11 @@
 body {
     font-family: 'Raleway', sans-serif;
-    background: #99A7D6FF;
+    background:rgba(247, 217, 241, 0.65);
     text-align: center;
 
 }
 
 h2{
     text-align: center;
-    background: #A7D6FF;
+    background:rgba(247, 217, 241, 0.4);
 }
