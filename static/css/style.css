@@ -1,4 +1,9 @@
 body {
     font-family: 'Raleway', sans-serif;
-    background: lightblue;
+    background: aliceblue;
+
+}
+
+h2{
+    background: lightcoral;
 }
