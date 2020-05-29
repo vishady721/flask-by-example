@@ -8,9 +8,18 @@
                 console.log("Pressed Submit")
 
             }</script>
+        <script type="text/javascript">// <![CDATA[
+            function preloader(){
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            }//preloader
+            window.onload = preloader;
+            // ]]>
+            </script>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-
+<div id = "loading"></div>
+<div id = "content">
 <h2>Date Field</h2>
 <p>Input the starting date for which you'd like to see requester information.</p>
 
@@ -19,5 +28,6 @@
     <input id="input_ID" name="date" type="date" />
     <input type = "submit"/>
 </form>
-<div class="loader"></div>
+</div>
+
 </html>
