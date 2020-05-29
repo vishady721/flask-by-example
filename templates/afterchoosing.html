@@ -7,16 +7,17 @@
       <body>
         <div class="container">
             <div class="content-section">
-                <div id = "myDynamicTable">
-                        <legend class="border-bottom mb-4">Match Info</legend>
-                         </div>
+                
+                        <h2> Match Info </h2>
+                        <div class = "tablecont"><div id = "myDynamicTable"></div></div>
+                        
                    
                             <script>
                                 function addTable(ids) {
                                 var myTableDiv = document.getElementById("myDynamicTable");
 
                                     var table = document.createElement('TABLE');
-                                    table.style.border = "1px solid red";
+                                    table.border = 1;
 
                                     var tableBody = document.createElement('TBODY');
                                     table.appendChild(tableBody);
@@ -37,7 +38,7 @@
                                                 for (var k in ids[i][key][j]){
                                                     var td2 = document.createElement('TD');
                                                     td2.width = 75;
-                                                    td2.appendChild(document.createTextNode(k + ":" + ids[i][key][j][k]));
+                                                    td2.appendChild(document.createTextNode(k + ": " + ids[i][key][j][k]));
                                                     tr1.appendChild(td2);
                                                 }
                                                 td.appendChild(tr1);
