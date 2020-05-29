@@ -12,7 +12,7 @@
                 <legend class="border-bottom mb-4">IDs to select</legend>
                 {%for i in ids%}
                 <li>
-                        <input type = "checkbox" id = "id_{{i}}" name = "ids" value = JSON.parse({{i}})>
+                        <input type = "checkbox" id = "id_{{i}}" name = "ids" value = JSON.parse({{i}}[1][0])>
                         <label for="id1">{{i}}</label>
                  </li>
                 {% endfor %}
