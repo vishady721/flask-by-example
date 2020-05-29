@@ -46,6 +46,7 @@ def functest():
     for elem in ids:
         elem_dict = {}
         elem_dict[elem] = eightclosestinfo(elem, volunteer_dict, request_dict)
+        info.append(elem_dict)
     return render_template('afterchoosing.html', ids1=info)
 
 def eightclosestinfo(name, volunteer_dict, request_dict):
