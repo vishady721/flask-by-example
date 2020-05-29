@@ -15,6 +15,7 @@
 					console.log("Getting response from " +url)
 
                     if(server_response["authenticated"] == "true"){
+									//var url = "http://localhost:5000/"
 			                    	var url = "https://oaklandatrisk-stage.herokuapp.com/";
 									$(location).attr('href',url);
                     }else{
